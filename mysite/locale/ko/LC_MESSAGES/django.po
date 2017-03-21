@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-17 17:48+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: trpg_regist/apps/character/apps.py:9 trpg_regist/apps/character/models.py:55
+msgid "Character"
+msgstr "캐릭터"
+
+#: trpg_regist/apps/character/apps.py:10
+#: trpg_regist/apps/character/models.py:56
+msgid "Characters"
+msgstr "캐릭터"
+
+#: trpg_regist/apps/character/models.py:19
+msgid "Empty"
+msgstr "예약가능"
+
+#: trpg_regist/apps/character/models.py:20
+msgid "Booked"
+msgstr "예약됨"
+
+#: trpg_regist/apps/character/models.py:21
+msgid "Paid"
+msgstr "결제완료"
+
+#: trpg_regist/apps/character/models.py:25
+msgid "Character_Name"
+msgstr "캐릭터 이름"
+
+#: trpg_regist/apps/character/models.py:32 trpg_regist/apps/scenario/apps.py:9
+#: trpg_regist/apps/scenario/models.py:76
+msgid "Scenario"
+msgstr "시나리오"
+
+#: trpg_regist/apps/character/models.py:39 trpg_regist/apps/player/apps.py:9
+#: trpg_regist/apps/player/models.py:59
+msgid "Player"
+msgstr "플레이어"
+
+#: trpg_regist/apps/character/models.py:45
+msgid "Status of booking"
+msgstr "예약 상태"
+
+#: trpg_regist/apps/player/apps.py:10 trpg_regist/apps/player/models.py:60
+msgid "Players"
+msgstr "플레이어"
+
+#: trpg_regist/apps/player/models.py:18
+msgid "Male"
+msgstr "남자"
+
+#: trpg_regist/apps/player/models.py:19
+msgid "Female"
+msgstr "여자"
+
+#: trpg_regist/apps/player/models.py:24
+msgid "Yes"
+msgstr "성인"
+
+#: trpg_regist/apps/player/models.py:25
+msgid "No"
+msgstr "미성년자"
+
+#: trpg_regist/apps/player/models.py:29
+msgid "Player Name"
+msgstr "플레이어 이름"
+
+#: trpg_regist/apps/player/models.py:34
+msgid "Phone Number"
+msgstr "전화번호"
+
+#: trpg_regist/apps/player/models.py:39
+msgid "Gender"
+msgstr "성별"
+
+#: trpg_regist/apps/player/models.py:45
+msgid "Is Adult"
+msgstr "성인 여부"
+
+#: trpg_regist/apps/player/models.py:51
+msgid "Email"
+msgstr "이메일"
+
+#: trpg_regist/apps/scenario/apps.py:10 trpg_regist/apps/scenario/models.py:77
+msgid "Scenarios"
+msgstr "시나리오"
+
+#: trpg_regist/apps/scenario/models.py:19
+msgid "Inactive"
+msgstr "비활성화"
+
+#: trpg_regist/apps/scenario/models.py:20
+msgid "Active"
+msgstr "활성화"
+
+#: trpg_regist/apps/scenario/models.py:25
+#: trpg_regist/apps/scenario/models.py:33
+msgid "Free"
+msgstr "제한없음"
+
+#: trpg_regist/apps/scenario/models.py:26
+msgid "Male Only"
+msgstr "남성 전용"
+
+#: trpg_regist/apps/scenario/models.py:27
+msgid "Female Only"
+msgstr "여성 전용"
+
+#: trpg_regist/apps/scenario/models.py:32
+#: trpg_regist/apps/scenario/models.py:42
+msgid "Adult Only"
+msgstr "성인 전용"
+
+#: trpg_regist/apps/scenario/models.py:37
+msgid "Scenario Name"
+msgstr "시나리오 이름"
+
+#: trpg_regist/apps/scenario/models.py:48
+msgid "Gender Only"
+msgstr "성별 제한"
+
+#: trpg_regist/apps/scenario/models.py:54
+msgid "Is Active"
+msgstr "활성화 여부"
+
+#: trpg_regist/apps/scenario/models.py:60
+msgid "Reg Date"
+msgstr "등록일"
+
+#: trpg_regist/apps/scenario/models.py:65
+msgid "Modify Date"
+msgstr "수정일"

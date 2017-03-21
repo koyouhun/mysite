@@ -1,0 +1,1 @@
+default_app_config = 'mysite.apps.player.apps.PlayerConfig'
