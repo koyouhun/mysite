@@ -1,0 +1,14 @@
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# Python cache Files
+*.pyc
+__pycache__
+
+# Sass cache Files
+.sass-cache
+
+# Pycharm Files
+.idea
