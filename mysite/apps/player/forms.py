@@ -7,6 +7,7 @@ from .models import Player
 
 
 class RegistForm(forms.Form):
+
     scenario = forms.ModelChoiceField(
         queryset=Scenario.objects.filter(is_active=Scenario.ACTIVE),
         empty_label="",

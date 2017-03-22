@@ -30,7 +30,13 @@
                         </div>
                         <div class="table_character">
                             <label for="character" class="table_character_title">캐릭터</label>
-                            <select id="id_character" name="character" required></select>
+                            <select id="id_character" name="character" required>
+                                {% if success == 'POST_FAIL' %}
+                                    {% for character in fail_character %}
+                                        <option value="{{ character.id }}">{{ character.name }}</option>
+                                    {% endfor %}
+                                {% endif %}
+                            </select>
                         </div>
                     </div>
                 </div>

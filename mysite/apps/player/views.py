@@ -83,14 +83,15 @@ class PlayerRegist(TemplateView):
             gender_only = scenario.gender_only
             player_gender = form.cleaned_data['player_gender']
             if gender_only != Scenario.FREE:
-                if gender_only == Scenario.MALE_ONLY and player_gender != Player.MALE:
+                if gender_only == Scenario.MALE_ONLY and player_gender != str(Player.MALE):
                     context['success'] = 'POST_FAIL'
                     context['error'] += "\n남성 전용 시나리오입니다."
-                elif gender_only == Scenario.FEMALE_ONLY and player_gender != Player.FEMALE:
+                elif gender_only == Scenario.FEMALE_ONLY and player_gender != str(Player.FEMALE):
                     context['success'] = 'POST_FAIL'
                     context['error'] += "\n여성 전용 시나리오입니다."
-
-            if scenario.adult_only == Scenario.YES and form.cleaned_data['player_adult'] != Scenario.YES:
+            print (form.cleaned_data['player_adult'])
+            print (Player.YES)
+            if scenario.adult_only == Scenario.YES and form.cleaned_data['player_adult'] != str(Player.YES):
                 context['success'] = 'POST_FAIL'
                 context['error'] += "\n성인 전용 시나리오입니다."
 
@@ -112,11 +113,16 @@ class PlayerRegist(TemplateView):
                 character.status = Character.BOOKED
                 character.player = player
                 character.save()
+                context['form'] = RegistForm
+            else:
+                context['form'] = form
+                context['fail_character'] = Character.objects.filter(scenario=form.cleaned_data['scenario'])
         else:
             context['success'] = 'POST_FAIL'
             context['error'] += '잘못된 입력값'
+            context['form'] = form
+            context['fail_character'] = []
 
         context['scenarios'] = Scenario.objects.filter(is_active=True)
-        context['form'] = RegistForm()
 
         return self.render_to_response(context)

@@ -38,7 +38,8 @@ class Character(models.Model):
         related_name='character',
         verbose_name=_('Player'),
         blank=True,
-        null=True
+        null=True,
+        on_delete=models.SET_NULL
     )
 
     status = models.PositiveSmallIntegerField(
