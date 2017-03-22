@@ -52,6 +52,16 @@ class Player(models.Model):
         max_length=64
     )
 
+    reg_date = models.DateTimeField(
+        _("Reg Date"),
+        auto_now_add=True
+    )
+
+    modify_date = models.DateTimeField(
+        _("Modify Date"),
+        auto_now=True
+    )
+
     def __str__(self):
         return self.name
 

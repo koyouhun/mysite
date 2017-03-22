@@ -24,7 +24,7 @@ class PlayerInfo(serializers.ModelSerializer):
         model = Player
         fields = (
             'name',
-            'is_adult',
+            'reg_date',
         )
 
 

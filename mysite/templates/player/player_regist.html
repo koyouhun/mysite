@@ -112,6 +112,7 @@
                             캐릭터명: <b>{{ character.name }}</b><br>
                             신청자 이름: {{ character.player_info.name }}<br>
                             신청 상태: <span style="color: {% if character.status == 0 %}#8bc34a">신청 가능{% elif character.status == 1 %}#ffc107">예약됨(미입금){% else %}#ff8000">예약됨(입금완료){% endif %}</span><br>
+                            신청 시간: {{ character.plyer_info.reg_date }}<br>
                             -----------------------------------<br>
                         {% endfor %}
                         </div>
