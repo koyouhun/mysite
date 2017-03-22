@@ -116,7 +116,9 @@ class PlayerRegist(TemplateView):
                 context['form'] = RegistForm
             else:
                 context['form'] = form
-                context['fail_character'] = Character.objects.filter(scenario=form.cleaned_data['scenario'])
+                context['fail_character'] = Character.objects\
+                    .filter(scenario=form.cleaned_data['scenario'])\
+                    .filter(status=Character.EMPTY)
         else:
             context['success'] = 'POST_FAIL'
             context['error'] += '잘못된 입력값'
