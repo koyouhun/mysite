@@ -1,5 +1,5 @@
 .container.body {
-  padding: 20px;
+  padding: 20px 0 100px;
   font-size: 12px; }
   .container.body .header_container {
     position: relative;
@@ -206,7 +206,8 @@
   .container.body .footer_container {
     margin: auto;
     margin-top: 20px;
-    width: 650px; }
+    width: 660px;
+    font-size: 0; }
     .container.body .footer_container .footer_title {
       text-align: center;
       font-weight: bold;
@@ -216,9 +217,12 @@
       box-sizing: border-box;
       border: 2px solid #1F629A; }
     .container.body .footer_container .footer_scenario_container {
+      font-size: 12px;
+      display: inline-block;
       width: 490px;
       margin-top: 5px;
-      position: absolute; }
+      position: relative;
+      z-index: 10; }
       .container.body .footer_container .footer_scenario_container .footer_scenario {
         margin-top: 5px;
         border: 2px solid #1F629A;
@@ -246,6 +250,7 @@
             margin-right: 3px;
             margin-bottom: 3px; }
         .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_detail {
+          position: relative;
           font-size: 12px;
           width: 80px;
           margin: 4px 0;
@@ -254,10 +259,28 @@
           box-sizing: border-box;
           border: 2px solid #1F629A;
           cursor: pointer; }
+          .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_detail .detail_view {
+            position: absolute;
+            display: none;
+            font-size: 12px;
+            width: 200px;
+            background: ivory;
+            border: 1px solid #1F629A;
+            margin-left: 90px;
+            margin-top: -250px;
+            line-height: 15px;
+            text-align: left;
+            padding: 5px 10px; }
+        .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_detail:hover .detail_view {
+          display: block; }
     .container.body .footer_container .footer_status_explain {
+      display: inline-block;
+      font-size: 12px;
       width: 160px;
       margin-top: 10px;
-      margin-left: 500px; }
+      margin-left: 10px;
+      position: absolute;
+      z-index: 5; }
       .container.body .footer_container .footer_status_explain .explain_title {
         text-align: center;
         font-weight: bold;

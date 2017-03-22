@@ -1,7 +1,7 @@
 $border_color: #1F629A
 
 .container.body
-  padding: 20px
+  padding: 20px 0 100px
   font-size: 12px
   .header_container
     position: relative
@@ -208,7 +208,8 @@ $border_color: #1F629A
   .footer_container
     margin: auto
     margin-top: 20px
-    width: 650px
+    width: 660px
+    font-size: 0
     .footer_title
       text-align: center
       font-weight: bold
@@ -218,9 +219,12 @@ $border_color: #1F629A
       box-sizing: border-box
       border: 2px solid $border_color
     .footer_scenario_container
+      font-size: 12px
+      display: inline-block
       width: 490px
       margin-top: 5px
-      position: absolute
+      position: relative
+      z-index: 10
       .footer_scenario
         margin-top: 5px
         border: 2px solid $border_color
@@ -248,6 +252,7 @@ $border_color: #1F629A
             margin-right: 3px
             margin-bottom: 3px
         .footer_scenario_detail
+          position: relative
           font-size: 12px
           width: 80px
           margin: 4px 0
@@ -256,10 +261,29 @@ $border_color: #1F629A
           box-sizing: border-box
           border: 2px solid $border_color
           cursor: pointer
+          .detail_view
+            position: absolute
+            display: none
+            font-size: 12px
+            width: 200px
+            background: ivory
+            border: 1px solid $border_color
+            margin-left: 90px
+            margin-top: -250px
+            line-height: 15px
+            text-align: left
+            padding: 5px 10px
+        .footer_scenario_detail:hover
+          .detail_view
+            display: block
     .footer_status_explain
+      display: inline-block
+      font-size: 12px
       width: 160px
       margin-top: 10px
-      margin-left: 500px
+      margin-left: 10px
+      position: absolute
+      z-index: 5
       .explain_title
         text-align: center
         font-weight: bold
