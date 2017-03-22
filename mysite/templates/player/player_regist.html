@@ -104,9 +104,18 @@
                         ></div>
                     {% endfor %}
                     </div>
-                    <a href="/api/scenario/{{ scenario.id }}" style="text-decoration: none">
-                        <div class="footer_scenario_detail">자세히 보기 !</div>
-                    </a>
+                    <div class="footer_scenario_detail">
+                        자세히 보기 !
+                        <div class="detail_view" style="display: none">
+                            <<{{ scenario.name }}>><br><br>
+                        {% for character in scenario.character.all %}
+                            캐릭터명: {{ character.name }}<br>
+                            신청자 이름: {{ character.player_info.name }}<br>
+                            신청 상태: {% if character.status == 0 %}신청 가능{% elif character.status == 1 %}예약됨(미입금){% else %}예약됨(입금완료){% endif %}<br>
+                            -----------------------------------<br><br>
+                        {% endfor %}
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
             </div>

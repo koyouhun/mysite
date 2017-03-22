@@ -128,6 +128,10 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = 'static'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static_local'),
+]
+
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',

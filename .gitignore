@@ -12,3 +12,6 @@ __pycache__
 
 # Pycharm Files
 .idea
+
+# Local Static Files
+static_local
