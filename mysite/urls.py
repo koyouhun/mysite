@@ -18,11 +18,11 @@ from django.contrib import admin
 
 from .apps.character.views import CharacterApi
 from .apps.player.views import PlayerApi, PlayerRegist
-from .apps.scenario.views import ScenarioApi, ScenarioDetailApi
+from .apps.scenario.views import ScenarioApi
 
 urlpatterns = [
     url(r'^$', PlayerRegist.as_view(), name="regist"),
-    url(r'^api/scenario/(?P<scenario_id>[0-9]+)$', ScenarioDetailApi.as_view()),
+    #url(r'^api/scenario/(?P<scenario_id>[0-9]+)$', ScenarioDetailApi.as_view()),
     url(r'^api/character$', CharacterApi.as_view()),
     url(r'^api/player', PlayerApi.as_view()),
     url(r'^api/scenario', ScenarioApi.as_view()),

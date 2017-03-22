@@ -15,5 +15,7 @@ class PlayerSerializer(serializers.ModelSerializer):
             'phone_number',
             'gender',
             'is_adult',
-            'email'
+            'email',
+            'reg_date',
+            'modify_date',
         )

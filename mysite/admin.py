@@ -20,7 +20,7 @@ class CharacterAdmin(admin.ModelAdmin):
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone_number', 'gender', 'is_adult', 'email')
+    list_display = ('name', 'phone_number', 'gender', 'is_adult', 'email', 'reg_date', 'modify_date')
 
 
 @admin.register(Scenario)

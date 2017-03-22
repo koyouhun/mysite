@@ -90,7 +90,7 @@ class PlayerRegist(TemplateView):
                     context['success'] = 'POST_FAIL'
                     context['error'] += "\n여성 전용 시나리오입니다."
 
-            if scenario.adult_only == Scenario.YES and not form.cleaned_data['player_adult']:
+            if scenario.adult_only == Scenario.YES and form.cleaned_data['player_adult'] != Scenario.YES:
                 context['success'] = 'POST_FAIL'
                 context['error'] += "\n성인 전용 시나리오입니다."
 
