@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'mysite.apps.character',
     'mysite.apps.player',
     'mysite.apps.scenario',
+    'mysite.apps.mail',
     'rest_framework',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -155,3 +157,7 @@ SWAGGER_SETTINGS = {
     ],
     'api_path': '/',
 }
+
+CRONJOBS = [
+    ('*/15 * * * *', 'mysite.apps.mail.cron.email_sending')
+]

@@ -10,18 +10,16 @@ from django.views.generic.base import TemplateView
 from django.utils.translation import ugettext_lazy as _
 from django.db import transaction
 from django.conf import settings
-from django.core.mail import EmailMessage
 
 # Third Party Library
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
-from pytz import timezone
 
 # Local Module
 from mysite.apps.scenario.models import Scenario
 from mysite.apps.player.models import Player
+from mysite.apps.mail.models import Mail
 from mysite.apps.character.models import Character
-from mysite.templates.email.template import player_regist_template
 from .models import Player
 from .forms import RegistForm
 from .serializer import PlayerSerializer
@@ -114,16 +112,14 @@ class PlayerRegist(TemplateView):
                 character.player = player
                 character.save()
 
-                data = {'player_name': player.name,
-                        'scenario_name': scenario.name,
-                        'character_name': character.name,
-                        'player_reg_date': player.reg_date.astimezone(timezone('Asia/Seoul')).strftime("%Y/%m/%d, %H:%M")}
-
-                EmailMessage(
-                    '[친구따라 강남가자] 신청 확인',
-                    player_regist_template % data,
-                    to=[player.email]
-                ).send()
+                mail = Mail.objects.create(
+                    player_name=player.name,
+                    scenario_name=scenario.name,
+                    character_name=character.name,
+                    player_reg_date=player.reg_date,
+                    player_email=player.email
+                )
+                mail.save()
 
                 context['form'] = RegistForm
             else:
