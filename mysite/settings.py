@@ -121,6 +121,13 @@ USE_TZ = True
 LOCALE_PATH = os.path.join(BASE_DIR, '/mysite/locale')
 
 
+# Email
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'chingugangnam@gmail.com'
+EMAIL_HOST_PASSWORD = 'dbgus1234'
+EMAIL_PORT = 587
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 

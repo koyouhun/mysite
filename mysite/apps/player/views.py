@@ -10,7 +10,7 @@ from django.views.generic.base import TemplateView
 from django.utils.translation import ugettext_lazy as _
 from django.db import transaction
 from django.conf import settings
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 
 # Third Party Library
 from rest_framework.views import APIView
@@ -91,8 +91,6 @@ class PlayerRegist(TemplateView):
                 elif gender_only == Scenario.FEMALE_ONLY and player_gender != str(Player.FEMALE):
                     context['success'] = 'POST_FAIL'
                     context['error'] += "\n여성 전용 시나리오입니다."
-            print (form.cleaned_data['player_adult'])
-            print (Player.YES)
             if scenario.adult_only == Scenario.YES and form.cleaned_data['player_adult'] != str(Player.YES):
                 context['success'] = 'POST_FAIL'
                 context['error'] += "\n성인 전용 시나리오입니다."
@@ -121,13 +119,11 @@ class PlayerRegist(TemplateView):
                         'character_name': character.name,
                         'player_reg_date': player.reg_date.astimezone(timezone('Asia/Seoul')).strftime("%Y/%m/%d, %H:%M")}
 
-                send_mail(
+                EmailMessage(
                     '[친구따라 강남가자] 신청 확인',
                     player_regist_template % data,
-                    '친구따라 강남가자<Gangnam@example.com>',
-                    ['koyouhun@daum.net'],
-                    fail_silently=False,
-                )
+                    to=['koyouhun@daum.net']
+                ).send()
 
                 context['form'] = RegistForm
             else:
