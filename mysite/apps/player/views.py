@@ -122,7 +122,7 @@ class PlayerRegist(TemplateView):
                 EmailMessage(
                     '[친구따라 강남가자] 신청 확인',
                     player_regist_template % data,
-                    to=['koyouhun@daum.net']
+                    to=[player.email]
                 ).send()
 
                 context['form'] = RegistForm
