@@ -1,12 +1,10 @@
 from pytz import timezone
 from django.core.mail import EmailMessage
-from django.db import transaction
 
 from mysite.templates.email.template import player_regist_template
 from .models import Mail
 
 
-@transaction.atomic
 def email_sending():
     mails = Mail.objects.all()
 
