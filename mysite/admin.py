@@ -29,8 +29,18 @@ delete_selected.short_description = "삭제 및 캐릭터 상태 변경"
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone_number', 'gender', 'is_adult', 'email', 'reg_date', 'modify_date')
+    list_display = ('name', 'scenario_name', 'character_name', 'phone_number',
+                    'gender', 'is_adult', 'email', 'reg_date')
     actions = [delete_selected]
+
+    def character_name(self, obj):
+        return obj.character.get().name
+    character_name.short_description = "캐릭터"
+
+    def scenario_name(self, obj):
+        return obj.character.get().scenario.name
+    scenario_name.short_description = "시나리오"
+
 
 @admin.register(Scenario)
 class ScenarioAdmin(admin.ModelAdmin):
