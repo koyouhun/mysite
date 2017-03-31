@@ -1,12 +1,9 @@
 # -*- coding:utf-8 -*-
 
 # Python Module
-import json
 
 # Django Module
 from django.http import HttpResponse
-from django.views import View
-from django.core.exceptions import ObjectDoesNotExist
 
 # Third Party Library
 from rest_framework.views import APIView
@@ -15,6 +12,8 @@ from rest_framework.renderers import JSONRenderer
 # Local Module
 from .models import Character
 from .serializer import CharacterSerializer
+
+# Inner Module
 
 
 class CharacterApi(APIView):

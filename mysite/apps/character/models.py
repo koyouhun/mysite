@@ -1,9 +1,17 @@
 # -*- coding:utf-8 -*-
 
+# Python Module
 from __future__ import unicode_literals
 
+# Django Module
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+
+# Third Party Library
+
+# Local Module
+
+# Inner Module
 
 
 class Character(models.Model):

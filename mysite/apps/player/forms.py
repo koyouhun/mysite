@@ -1,13 +1,25 @@
+# -*- coding:utf-8 -*-
+
+# Python Module
+
+# Django Module
 from django import forms
 from django.utils.translation import ugettext_lazy as _
+from django.apps import apps
 
-from mysite.apps.scenario.models import Scenario
-from mysite.apps.character.models import Character
+# Third Party Library
+
+# Local Module
+
+# Inner Module
 from .models import Player
+
+# Local Model
+Scenario = apps.get_app_config('scenario').get_model('Scenario')
+Character = apps.get_app_config('character').get_model('Character')
 
 
 class RegistForm(forms.Form):
-
     scenario = forms.ModelChoiceField(
         queryset=Scenario.objects.filter(is_active=Scenario.ACTIVE),
         empty_label="",

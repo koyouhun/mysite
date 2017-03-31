@@ -5,24 +5,26 @@
 # Django Module
 from django.http import HttpResponse
 from django.views import View
-from django.core.exceptions import ObjectDoesNotExist
 from django.views.generic.base import TemplateView
 from django.utils.translation import ugettext_lazy as _
 from django.db import transaction
-from django.conf import settings
+from django.apps import apps
 
 # Third Party Library
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 
 # Local Module
-from mysite.apps.scenario.models import Scenario
-from mysite.apps.player.models import Player
-from mysite.apps.mail.models import Mail
-from mysite.apps.character.models import Character
+
+# Inner Module
 from .models import Player
 from .forms import RegistForm
 from .serializer import PlayerSerializer
+
+# Local Model
+Scenario = apps.get_app_config('scenario').get_model('Scenario')
+Character = apps.get_app_config('character').get_model('Character')
+Mail = apps.get_app_config('mail').get_model('Mail')
 
 
 class Regist(View):
