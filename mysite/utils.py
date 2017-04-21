@@ -1,13 +1,62 @@
 # -*- coding:utf-8 -*-
 
-import unicodecsv as csv
+# Python Module
+import csv
 
-from mysite.apps.character.models import Character
-from mysite.apps.scenario.models import Scenario
+# Django Module
+from django.apps import apps
+
+# Third Party Library
+
+# Local Module
+
+# Inner Module
+
+# Local Model
+Character = apps.get_app_config('character').get_model('Character')
+Scenario = apps.get_app_config('scenario').get_model('Scenario')
+
+
+def add_characters(path):
+    """
+    add characters from csv to db
+    :param path: csv file
+    """
+    _read_characters(path)
+
+
+def add_scenarios(path):
+    """
+    add scenario from csv to db
+    :param path: csv file
+    """
+    _read_scenarios(path)
+
+
+def reset_characters(path):
+    """
+    reset characters database with csv
+    :param path: csv file
+    """
+    Character.objects.all().delete()
+    _read_characters(path)
+
+
+def reset_scenarios(path):
+    Scenario.objects.all().delete()
+    _read_scenarios(path)
+
+
+def extract_characters(path):
+    _read_characters(path)
+
+
+def extract_scenarios(path):
+    _read_scenarios(path)
 
 
 def _read_characters(path):
-    with open(path, 'rb') as csvfile:
+    with open(path, 'r') as csvfile:
         reader = csv.reader(csvfile)
         for data in reader:
             character = Character()
@@ -17,7 +66,7 @@ def _read_characters(path):
 
 
 def _read_scenarios(path):
-    with open(path, 'rb') as csvfile:
+    with open(path, 'r') as csvfile:
         reader = csv.reader(csvfile)
         for data in reader:
             scenario = Scenario()
@@ -36,23 +85,3 @@ def _read_scenarios(path):
                 scenario.gender_only = Scenario.GENDER_CHOICES['FREE']
 
             scenario.save()
-
-
-def add_characters(path):
-    Character.objects.all().delete()
-    _read_characters(path)
-
-
-def add_scenarios(path):
-    Scenario.objects.all().delete()
-    _read_scenarios(path)
-
-
-def reset_characters(path):
-    Character.objects.all().delete()
-    _read_characters(path)
-
-
-def reset_scenarios(path):
-    Scenario.objects.all().delete()
-    _read_scenarios(path)
