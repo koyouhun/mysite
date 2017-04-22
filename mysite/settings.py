@@ -126,8 +126,8 @@ LOCALE_PATH = os.path.join(BASE_DIR, '/mysite/locale')
 # Email
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'chingugangnam@gmail.com'
-EMAIL_HOST_PASSWORD = 'dbgus1234'
+EMAIL_HOST_USER = 'insanehongbo@gmail.com'
+EMAIL_HOST_PASSWORD = 'qlalf5464'
 EMAIL_PORT = 587
 
 
