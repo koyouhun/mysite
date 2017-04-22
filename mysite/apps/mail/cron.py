@@ -15,7 +15,7 @@ def email_sending():
                 'player_reg_date': mail.player_reg_date.astimezone(timezone('Asia/Seoul')).strftime("%Y-%m-%d %H:%M")}
 
         EmailMessage(
-            '[친구따라 강남가자] 신청 확인',
+            '[인세인 온리전] 신청 확인',
             player_regist_template % data,
             to=[mail.player_email]
         ).send()
