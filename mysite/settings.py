@@ -143,13 +143,6 @@ STATICFILES_DIRS = [
 ]
 
 
-# Admin
-ADMINS = (
-    ('Wishket Admin', 'admin@wishket.com'),
-)
-MANAGERS = ADMINS
-
-
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
