@@ -11,11 +11,10 @@ def email_sending():
     for mail in mails:
         data = {'player_name': mail.player_name,
                 'scenario_name': mail.scenario_name,
-                'character_name': mail.character_name,
                 'player_reg_date': mail.player_reg_date.astimezone(timezone('Asia/Seoul')).strftime("%Y-%m-%d %H:%M")}
 
         EmailMessage(
-            '[인세인 온리전] 신청 확인',
+            '[나는 친구가 없다] 신청 확인',
             player_regist_template % data,
             to=[mail.player_email]
         ).send()
