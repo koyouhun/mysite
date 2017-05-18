@@ -161,5 +161,5 @@ SWAGGER_SETTINGS = {
 }
 
 CRONJOBS = [
-    ('*/15 * * * *', 'mysite.apps.mail.cron.email_sending')
+    ('*/1 * * * *', 'mysite.apps.mail.cron.email_sending')
 ]
