@@ -54,4 +54,6 @@ player_regist_template = """안녕하세요 %(player_name)s 님!
 ※ 행사 전날의 컨디션 유지를 부탁 드립니다.
 
 즐거운 일일플레이 되시기 바랍니다!
-감사합니다."""
+감사합니다.
+
+<img src="http://gameday.ap-northeast-2.elasticbeanstalk.com/static/photo.jpeg">"""
