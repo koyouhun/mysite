@@ -16,7 +16,7 @@
     {% if success == 'POST_FAIL' %}<div style="background-color: #FF5722; line-height: 30px; text-align: center; color: #ffffff;">{{ error | linebreaksbr }}</div>{% endif %}
     <div class="container body">
         <div class="header_container">
-            <div class="header_title">보드게임 행사 '나는 친구가 없다' 신청 페이지</div>
+            <div class="header_title">'게임 데이' 신청 페이지</div>
         </div>
         <div class="body_container">
             <form class="regist_form" id="regist_form" method="post" action="{% url "regist" %}">
@@ -73,9 +73,9 @@
                                     {{ form.agree_face }}
                                 </div>
                                 <div class="player_agree_lables">
-                                    <label for="agree_read_all">플레이어는 신청하려는 테이블의 모든 유의사항을 읽었습니다.</label>
-                                    <label for="agree_no_problem">플레이어는 신청하려는 테이블의 신청 제한 조건에 결격사유가 없습니다.</label>
-                                    <label for="agree_fact">입력한 플레이어 정보가 모두 사실임을 확인했습니다.</label>
+                                    <label for="agree_read_all">신청하려는 행사의 모든 유의사항을 읽었습니다.</label>
+                                    <label for="agree_no_problem">신청하려는 행사의 제한 조건에 결격사유가 없습니다.</label>
+                                    <label for="agree_fact">입력한 정보가 모두 사실임을 확인했습니다.</label>
                                 </div>
                             </div>
                             <input type="submit" class="player_submit" id="player_submit" value="신청 !">
@@ -85,11 +85,11 @@
             </form>
             <div class="player_warning">
                 * 신청시 입력한 내용이 허위로 밝혀질 경우 신청료 환불 없이 예약이 취소될 수 있습니다.<br>
-                * 이메일 오기재 등으로 신청 확인 메일을 수신하지 못하신 경우, 사이트의 CONTACT란 또는 트위터 @dicechicks 통해 문의하시면 48시간 이내에 처리해 드립니다.
+                * 이메일 오기재 등으로 신청 확인 메일을 수신하지 못하신 경우, 게임데이 행사 계정을 통해 문의하시면 48시간 이내에 처리해 드립니다.
             </div>
         </div>
         <div class="footer_container">
-            <div class="footer_title">보드게임별 신청 현황</div>
+            <div class="footer_title">신청 현황</div>
             <div class="footer_scenario_container">
             {% for scenario in scenarios %}
                 <div class="footer_scenario">
@@ -143,6 +143,7 @@
                 </div>
             </div>
         </div>
+        <div style="width: 100px; margin-bottom: 500px"></div>
     </div>
 </body>
 </html>
