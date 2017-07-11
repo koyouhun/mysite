@@ -1,5 +1,5 @@
-from pytz import timezone
-from django.core.mail import EmailMessage
+from django.core import mail as dj_mail
+from django.conf import settings
 
 from mysite.templates.email.template import player_regist_template
 from .models import Mail
@@ -13,10 +13,12 @@ def email_sending():
                 # 'scenario_name': mail.scenario_name,
                 # 'player_reg_date': mail.player_reg_date.astimezone(timezone('Asia/Seoul')).strftime("%Y-%m-%d %H:%M")}
 
-        EmailMessage(
-            '[게임데이] 신청 확인',
-            player_regist_template % data,
-            to=[mail.player_email]
-        ).send()
+        dj_mail.send_mail(
+            subject='[게임데이] 신청 확인',
+            message=player_regist_template % data,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[mail.player_email],
+            html_message=player_regist_template % data
+        )
 
         mail.delete()
