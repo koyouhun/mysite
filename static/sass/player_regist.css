@@ -218,8 +218,7 @@ body {
             margin-left: 545px;
             box-sizing: border-box;
             border: 2px solid #77477E;
-            background-color: #644936;
-            color: #FE9600;
+            background-color: #a17b59;
             font-size: 15px;
             cursor: pointer; }
     .container.body .body_container .player_warning {
@@ -258,7 +257,7 @@ body {
         padding: 7px 5px; }
         .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_title {
           position: absolute;
-          font-size: 20px;
+          font-size: 15px;
           width: 320px;
           line-height: 38px;
           cursor: pointer; }

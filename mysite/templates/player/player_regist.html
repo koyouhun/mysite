@@ -45,11 +45,11 @@
                     <div class="player_detail">
                         <div class="player_detail_basic">
                             <div class="player_detail_name">
-                                <label for="player_name" class="player_name_title">플레이어 이름</label>
+                                <label for="player_name" class="player_name_title">입금자명</label>
                                 {{ form.player_name }}
                             </div>
                             <div class="player_detail_nickname">
-                                <label for="player_nickname" class="player_nickname_title">플레이어 별명</label>
+                                <label for="player_nickname" class="player_nickname_title">닉네임</label>
                                 {{ form.player_nickname }}
                             </div>
                             <div class="player_detail_phone_number">
@@ -105,7 +105,7 @@
             {% for scenario in scenarios %}
                 <div class="footer_scenario">
                     <div class="footer_scenario_title">
-                        <a class="scenario_name" href="/cancel/{{ scenario.id }}">{{ scenario.name|truncatechars:20 }}</a>
+                        <a class="scenario_name" href="/cancel/{{ scenario.id }}">{{ scenario.name|truncatechars:25 }}</a>
                         {% if scenario.master != None %}
                             <span class="scenario_master">{{ scenario.master }} </span>
                         {% endif %}
