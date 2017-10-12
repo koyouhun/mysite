@@ -103,7 +103,12 @@
             <div class="footer_scenario_container">
             {% for scenario in scenarios %}
                 <div class="footer_scenario">
-                    <div class="footer_scenario_title"><a href="/cancel/{{ scenario.id }}">{% if scenario.master != None %}{{ scenario.master }}: {% endif %}{{ scenario.name }}</a></div>
+                    <div class="footer_scenario_title">
+                        <a class="scenario_name" href="/cancel/{{ scenario.id }}">{{ scenario.name|truncatechars:20 }}</a>
+                        {% if scenario.master != None %}
+                            <span class="scenario_master">{{ scenario.master }} </span>
+                        {% endif %}
+                    </div>
                     <div class="footer_scenario_booked">
                     {% for character in scenario.character.all %}
                         <div class="scenario_character_status"

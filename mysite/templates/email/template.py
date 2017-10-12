@@ -30,7 +30,7 @@ player_regist_template = """안녕하세요. NAVER TRPG CAFE입니다.
 일일플레이는 10월 28일 10시 30분부터 참가자 입장으로 시작됩니다.
 행사장은 합정역 인근의 '팜인디에어'입니다.
 
-<img src="http://gameday.ap-northeast-2.elasticbeanstalk.com/static/photo.png">
+<img src="http://halloween.ap-northeast-2.elasticbeanstalk.com/static/photo.png">
 서울특별시 마포구 양화로 27 3/4F
 
 ※입장이 늦을 경우, 행사 참가에 불이익이 있을 수 있으니, 부디 늦지 않도록 주의하시기 바랍니다.

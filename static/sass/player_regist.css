@@ -259,6 +259,14 @@ body {
           font-size: 20px;
           width: 320px;
           line-height: 38px; }
+          .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_title .scenario_name {
+            width: 240px;
+            position: relative;
+            display: inline-block; }
+          .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_title .scenario_master {
+            width: 75px;
+            font-weight: bold;
+            font-size: 12px; }
           .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_title a {
             text-decoration: none;
             color: #000000; }
