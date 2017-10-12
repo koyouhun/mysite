@@ -3,13 +3,14 @@ body {
   margin: 0; }
 
 .container.body {
+  color: #03001C;
   padding: 20px 0 100px;
   font-size: 12px; }
   .container.body .header_container {
     position: relative;
     margin: auto;
     width: 700px;
-    border: 5px solid #1F629A; }
+    border: 5px solid #77477E; }
     .container.body .header_container .header_title {
       font-size: 25px;
       line-height: 45px;
@@ -18,7 +19,7 @@ body {
     position: relative;
     margin-top: 30px; }
     .container.body .body_container .regist_form {
-      border: 2px solid #1F629A;
+      border: 2px solid #77477E;
       padding: 20px;
       width: 650px;
       margin: auto; }
@@ -28,7 +29,7 @@ body {
         .container.body .body_container .regist_form .table_container .table_title {
           width: 360px;
           margin: auto;
-          border: 2px solid #1F629A;
+          border: 2px solid #77477E;
           text-align: center;
           line-height: 20px;
           font-size: 15px; }
@@ -41,13 +42,13 @@ body {
             .container.body .body_container .regist_form .table_container .table_detail .table_scenario .table_scenario_title {
               display: block;
               box-sizing: border-box;
-              border: 2px solid #1F629A;
+              border: 2px solid #77477E;
               line-height: 20px; }
             .container.body .body_container .regist_form .table_container .table_detail .table_scenario #id_scenario {
               margin-top: 5px;
               width: 400px;
               height: 25px;
-              border: 2px solid #1F629A; }
+              border: 2px solid #77477E; }
           .container.body .body_container .regist_form .table_container .table_detail .table_character {
             margin-left: 410px;
             position: relative;
@@ -55,13 +56,13 @@ body {
             .container.body .body_container .regist_form .table_container .table_detail .table_character .table_character_title {
               display: block;
               box-sizing: border-box;
-              border: 2px solid #1F629A;
+              border: 2px solid #77477E;
               line-height: 20px; }
             .container.body .body_container .regist_form .table_container .table_detail .table_character #id_character {
               margin-top: 5px;
               width: 240px;
               height: 25px;
-              border: 2px solid #1F629A; }
+              border: 2px solid #77477E; }
       .container.body .body_container .regist_form .player_container {
         margin-top: 20px; }
         .container.body .body_container .regist_form .player_container .player_title {
@@ -70,7 +71,7 @@ body {
           font-size: 15px;
           line-height: 20px;
           text-align: center;
-          border: 2px solid #1F629A; }
+          border: 2px solid #77477E; }
         .container.body .body_container .regist_form .player_container .player_detail {
           margin-top: 15px; }
           .container.body .body_container .regist_form .player_container .player_detail .player_detail_basic {
@@ -84,13 +85,13 @@ body {
                 box-sizing: border-box;
                 display: block;
                 width: 170px;
-                border: 2px solid #1F629A; }
+                border: 2px solid #77477E; }
               .container.body .body_container .regist_form .player_container .player_detail .player_detail_basic .player_detail_name #id_player_name {
                 margin-top: 5px;
                 display: block;
                 width: 170px;
                 box-sizing: border-box;
-                border: 2px solid #1F629A;
+                border: 2px solid #77477E;
                 text-align: center;
                 line-height: 20px; }
             .container.body .body_container .regist_form .player_container .player_detail .player_detail_basic .player_detail_nickname {
@@ -102,13 +103,13 @@ body {
                 box-sizing: border-box;
                 display: block;
                 width: 200px;
-                border: 2px solid #1F629A; }
+                border: 2px solid #77477E; }
               .container.body .body_container .regist_form .player_container .player_detail .player_detail_basic .player_detail_nickname #id_player_nickname {
                 margin-top: 5px;
                 display: block;
                 width: 200px;
                 box-sizing: border-box;
-                border: 2px solid #1F629A;
+                border: 2px solid #77477E;
                 text-align: center;
                 line-height: 20px; }
             .container.body .body_container .regist_form .player_container .player_detail .player_detail_basic .player_detail_phone_number {
@@ -119,12 +120,12 @@ body {
                 box-sizing: border-box;
                 display: block;
                 width: 260px;
-                border: 2px solid #1F629A; }
+                border: 2px solid #77477E; }
               .container.body .body_container .regist_form .player_container .player_detail .player_detail_basic .player_detail_phone_number #id_player_phone_number {
                 margin-top: 5px;
                 width: 260px;
                 box-sizing: border-box;
-                border: 2px solid #1F629A;
+                border: 2px solid #77477E;
                 text-align: center;
                 line-height: 20px; }
           .container.body .body_container .regist_form .player_container .player_detail .player_detail_other {
@@ -138,12 +139,12 @@ body {
                 display: block;
                 width: 430px;
                 box-sizing: border-box;
-                border: 2px solid #1F629A;
+                border: 2px solid #77477E;
                 text-align: center; }
               .container.body .body_container .regist_form .player_container .player_detail .player_detail_other .player_detail_email #id_player_email {
                 width: 430px;
                 box-sizing: border-box;
-                border: 2px solid #1F629A;
+                border: 2px solid #77477E;
                 margin-top: 5px;
                 line-height: 20px;
                 text-align: center; }
@@ -156,13 +157,13 @@ body {
                 box-sizing: border-box;
                 display: block;
                 width: 60px;
-                border: 2px solid #1F629A; }
+                border: 2px solid #77477E; }
               .container.body .body_container .regist_form .player_container .player_detail .player_detail_other .player_detail_gender #id_player_gender {
                 margin-top: 5px;
                 display: block;
                 width: 60px;
                 box-sizing: border-box;
-                border: 2px solid #1F629A;
+                border: 2px solid #77477E;
                 text-align: center;
                 height: 26px; }
             .container.body .body_container .regist_form .player_container .player_detail .player_detail_other .player_detail_adult {
@@ -173,13 +174,13 @@ body {
                 box-sizing: border-box;
                 display: block;
                 width: 140px;
-                border: 2px solid #1F629A; }
+                border: 2px solid #77477E; }
               .container.body .body_container .regist_form .player_container .player_detail .player_detail_other .player_detail_adult #id_player_adult {
                 margin-top: 5px;
                 display: block;
                 width: 140px;
                 box-sizing: border-box;
-                border: 2px solid #1F629A;
+                border: 2px solid #77477E;
                 text-align: center;
                 height: 26px; }
         .container.body .body_container .regist_form .player_container .player_detail_check {
@@ -216,8 +217,9 @@ body {
             height: 49px;
             margin-left: 545px;
             box-sizing: border-box;
-            border: 2px solid #1F629A;
-            background-color: #d7f7ff;
+            border: 2px solid #77477E;
+            background-color: #644936;
+            color: #FE9600;
             font-size: 15px;
             cursor: pointer; }
     .container.body .body_container .player_warning {
@@ -241,7 +243,7 @@ body {
       line-height: 25px;
       margin: auto;
       box-sizing: border-box;
-      border: 2px solid #1F629A; }
+      border: 2px solid #77477E; }
     .container.body .footer_container .footer_scenario_container {
       font-size: 12px;
       display: inline-block;
@@ -251,7 +253,7 @@ body {
       z-index: 10; }
       .container.body .footer_container .footer_scenario_container .footer_scenario {
         margin-top: 5px;
-        border: 2px solid #1F629A;
+        border: 2px solid #77477E;
         text-align: center;
         padding: 7px 5px; }
         .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_title {
@@ -295,7 +297,7 @@ body {
           margin-left: 390px;
           line-height: 30px;
           box-sizing: border-box;
-          border: 2px solid #1F629A;
+          border: 2px solid #77477E;
           cursor: pointer; }
           .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_detail .detail_view {
             position: absolute;
@@ -303,7 +305,7 @@ body {
             font-size: 12px;
             width: 200px;
             background: ivory;
-            border: 1px solid #1F629A;
+            border: 1px solid #77477E;
             margin-left: 90px;
             margin-top: -250px;
             line-height: 15px;
