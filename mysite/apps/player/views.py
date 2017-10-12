@@ -3,7 +3,7 @@
 # Python Module
 
 # Django Module
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.views import View
 from django.views.generic.base import TemplateView
 from django.utils.translation import ugettext_lazy as _
@@ -18,7 +18,7 @@ from rest_framework.renderers import JSONRenderer
 
 # Inner Module
 from .models import Player
-from .forms import RegistForm
+from .forms import RegistForm, CancelForm
 from .serializer import PlayerSerializer
 
 # Local Model
@@ -103,6 +103,7 @@ class PlayerRegist(TemplateView):
             if context['success'] == 'POST_SUCCESS':
                 player = Player.objects.create(
                     name=form.cleaned_data['player_name'],
+                    nickname=form.cleaned_data['player_nickname'],
                     phone_number=form.cleaned_data['player_phone_number'],
                     gender=form.cleaned_data['player_gender'],
                     is_adult=form.cleaned_data['player_adult'],
@@ -137,4 +138,42 @@ class PlayerRegist(TemplateView):
 
         context['scenarios'] = Scenario.objects.filter(is_active=True)
 
+        return self.render_to_response(context)
+
+
+class RegistCancel(TemplateView):
+    """
+    Regist Cancel View
+    """
+    template_name = "player/regist_cancel.html"
+
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        scenario = Scenario.objects.get(id=kwargs['scenario_id'])
+        context['scenario'] = scenario
+        context['characters'] = scenario.character.filter(status=Character.BOOKED)
+        context['form'] = CancelForm()
+        return self.render_to_response(context)
+
+    def post(self, request, *args, **kwargs):
+        form = CancelForm(request.POST)
+        context = self.get_context_data(**kwargs)
+        context['success'] = "입력칸을 채워주세요!"
+        scenario = Scenario.objects.get(id=request.POST['scenario_id'])
+        if form.is_valid():
+            character = Character.objects.get(id=form.cleaned_data['character_id'])
+            player = character.player
+            context['success'] = "정보가 일치하지 않습니다"
+            if form.cleaned_data['player_email'] == player.email and \
+                form.cleaned_data['player_name'] == player.name and \
+                form.cleaned_data['player_phone_number'] == player.phone_number:
+                player.delete()
+                character.player = None
+                character.status = Character.EMPTY
+                character.save()
+                context['success'] = "취소됐습니다!"
+                return HttpResponseRedirect('/')
+        context['scenario'] = scenario
+        context['characters'] = scenario.character.filter(status=Character.BOOKED)
+        context['form'] = form
         return self.render_to_response(context)

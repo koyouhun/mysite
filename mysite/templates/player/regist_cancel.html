@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/regist_cancel.css" %}">
+    <title>신청 취소</title>
+</head>
+<body>
+<div class="container body">
+    <div class="header_container">
+        <a href="/"><div class="header_title">{% if success %}{{ success }}{% else %}신청 페이지로{% endif %}</div></a>
+    </div>
+    <div class="body_container">
+        <form class="cancel_form" id="cancel_form" method="post" action="">
+            {% csrf_token %}
+            <input type="hidden" name="scenario_id" value={{ scenario.id }}>
+            <div class="table_container">
+                <div class="table_title">취소 정보</div>
+                <div class="table_detail">
+                    <div class="table_scenario">
+                        <label for="scenario" class="table_scenario_title">게임명</label>
+                        <select disabled class="scenario_name" name="scenario_id" required>
+                            <option selected value={{ scenario.id }}>{{ scenario.name }}</option>
+                        </select>
+                    </div>
+                    <div class="table_character">
+                        <label for="character" class="table_character_title">캐릭터</label>
+                        <select id="id_character" name="character_id" required>
+                            {% for c in characters %}
+                                <option value={{ c.id }}>{{ c.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="player_container">
+                <div class="player_title">플레이어 정보</div>
+                <div class="player_detail">
+                    <div class="player_detail_basic">
+                        <div class="player_detail_name">
+                            <label for="player_name" class="player_name_title">플레이어 이름</label>
+                            {{ form.player_name }}
+                        </div>
+                        <div class="player_detail_phone_number">
+                            <label for="player_phone_number" class="player_phone_number_title">연락처 (HP)</label>
+                            {{ form.player_phone_number }}
+                        </div>
+                        <div class="player_detail_email">
+                            <label for="player_email" class="player_email">이메일 주소</label>
+                            {{ form.player_email }}
+                        </div>
+                    </div>
+                    <div class="player_detail_check">
+                        <div class="player_agree">
+                            <div class="player_agree_checkboxes">
+                                {{ form.agree_cancel }}
+                            </div>
+                            <div class="player_agree_lables">
+                                <label for="agree_read_all">신청 취소에 동의합니다.</label>
+                            </div>
+                        </div>
+                        <input type="submit" class="player_submit" id="player_submit" value="신청 취소">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="player_warning">
+        * 신청시 입력한 정보와 동일한 이름, 연락처, 이메일 주소가 필요합니다.<br>
+        * 이미 입금이 완료된 경우, 안전한 환불을 위해 신청 사이트에서 취소가 불가능합니다. 관리자에게 문의하십시오.<br>
+        </div>
+    </div>
+</div>
+</body>
+</html>

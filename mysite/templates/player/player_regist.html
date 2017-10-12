@@ -16,7 +16,7 @@
     {% if success == 'POST_FAIL' %}<div style="background-color: #FF5722; line-height: 30px; text-align: center; color: #ffffff;">{{ error | linebreaksbr }}</div>{% endif %}
     <div class="container body">
         <div class="header_container">
-            <div class="header_title">제 20회 일일플레이 신청 페이지</div>
+            <div class="header_title">할로윈 파티 신청 페이지</div>
         </div>
         <div class="body_container">
             <form class="regist_form" id="regist_form" method="post" action="{% url "regist" %}">
@@ -48,9 +48,19 @@
                                 <label for="player_name" class="player_name_title">플레이어 이름</label>
                                 {{ form.player_name }}
                             </div>
+                            <div class="player_detail_nickname">
+                                <label for="player_nickname" class="player_nickname_title">플레이어 별명</label>
+                                {{ form.player_nickname }}
+                            </div>
                             <div class="player_detail_phone_number">
                                 <label for="player_phone_number" class="player_phone_number_title">연락처 (HP)</label>
                                 {{ form.player_phone_number }}
+                            </div>
+                        </div>
+                        <div class="player_detail_other">
+                            <div class="player_detail_email">
+                                <label for="player_email" class="player_email">이메일 주소</label>
+                                {{ form.player_email }}
                             </div>
                             <div class="player_detail_gender">
                                 <label for="player_gender" class="player_gender_title">성별</label>
@@ -60,10 +70,6 @@
                                 <label for="player_adult" class="player_adult_title">법적 성인이십니까?</label>
                                 {{ form.player_adult }}
                             </div>
-                        </div>
-                        <div class="player_detail_email">
-                            <label for="player_email" class="player_email">이메일 주소</label>
-                            {{ form.player_email }}
                         </div>
                         <div class="player_detail_check">
                             <div class="player_agree">
@@ -97,7 +103,7 @@
             <div class="footer_scenario_container">
             {% for scenario in scenarios %}
                 <div class="footer_scenario">
-                    <div class="footer_scenario_title">{{ scenario.name }}</div>
+                    <div class="footer_scenario_title"><a href="/cancel/{{ scenario.id }}">{% if scenario.master != None %}{{ scenario.master }}: {% endif %}{{ scenario.name }}</a></div>
                     <div class="footer_scenario_booked">
                     {% for character in scenario.character.all %}
                         <div class="scenario_character_status"
@@ -116,10 +122,10 @@
                     <div class="footer_scenario_detail">
                         자세히 보기 !
                         <div class="detail_view">
-                            << {{ scenario.name }} >><br><br>
+                            << {{ scenario.master }}: {{ scenario.name }} >><br><br>
                         {% for character in scenario.character.all %}
                             캐릭터명: <b>{{ character.name }}</b><br>
-                            신청자 이름: {{ character.player.name }}<br>
+                            신청자 별명: {{ character.player.nickname }}<br>
                             신청 상태: <span style="color: {% if character.status == 0 %}#8bc34a">신청 가능{% elif character.status == 1 %}#ffc107">예약됨(미입금){% else %}#ff8000">예약됨(입금완료){% endif %}</span><br>
                             신청 시간: {{ character.player.reg_date|date:'Y-m-d H:i' }}<br>
                             -----------------------------------<br>
@@ -148,7 +154,7 @@
             </div>
         </div>
         <div style="text-align:center; width: 100%; margin-top: 100px">
-            <img style="margin: auto;" src="{% static "photo.jpeg" %}">
+            <img style="margin: auto;" src="{% static "photo.png" %}">
         </div>
     </div>
 </body>

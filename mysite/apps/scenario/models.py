@@ -33,6 +33,12 @@ class Scenario(models.Model):
         (NO, _('Free'))
     )
 
+    master = models.CharField(
+        _("Master Name"),
+        max_length=64,
+        null=True
+    )
+
     name = models.CharField(
         _("Scenario Name"),
         max_length=128

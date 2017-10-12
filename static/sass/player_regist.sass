@@ -95,23 +95,60 @@ body
                 border: 2px solid $border_color
                 text-align: center
                 line-height: 20px
-            .player_detail_phone_number
-              width: 250px
+            .player_detail_nickname
+              width: 200px
               display: block
               position: absolute
               margin-left: 180px
-              .player_phone_number_title
+              .player_nickname_title
                 box-sizing: border-box
                 display: block
-                width: 250px
+                width: 200px
                 border: 2px solid $border_color
-              #id_player_phone_number
+              #id_player_nickname
                 margin-top: 5px
-                width: 250px
+                display: block
+                width: 200px
                 box-sizing: border-box
                 border: 2px solid $border_color
                 text-align: center
                 line-height: 20px
+            .player_detail_phone_number
+              width: 260px
+              display: block
+              margin-left: 390px
+              .player_phone_number_title
+                box-sizing: border-box
+                display: block
+                width: 260px
+                border: 2px solid $border_color
+              #id_player_phone_number
+                margin-top: 5px
+                width: 260px
+                box-sizing: border-box
+                border: 2px solid $border_color
+                text-align: center
+                line-height: 20px
+          .player_detail_other
+            margin-top: 15px
+            text-align: center
+            .player_detail_email
+              width: 430px
+              display: block
+              position: absolute
+              .player_email
+                display: block
+                width: 430px
+                box-sizing: border-box
+                border: 2px solid $border_color
+                text-align: center
+              #id_player_email
+                width: 430px
+                box-sizing: border-box
+                border: 2px solid $border_color
+                margin-top: 5px
+                line-height: 20px
+                text-align: center
             .player_detail_gender
               width: 60px
               display: block
@@ -147,21 +184,6 @@ body
                 border: 2px solid $border_color
                 text-align: center
                 height: 26px
-        .player_detail_email
-          margin-top: 15px
-          .player_email
-            display: block
-            width: 650px
-            box-sizing: border-box
-            border: 2px solid $border_color
-            text-align: center
-          #id_player_email
-            width: 650px
-            box-sizing: border-box
-            border: 2px solid $border_color
-            margin-top: 5px
-            line-height: 20px
-            text-align: center
         .player_detail_check
           margin-top: 15px
           height: 49px
@@ -239,6 +261,9 @@ body
           font-size: 20px
           width: 320px
           line-height: 38px
+          a
+            text-decoration: none
+            color: #000000
         .footer_scenario_booked
           position: absolute
           width: 61px
@@ -314,4 +339,3 @@ body
           background: #e7e7d8
           line-height: 20px
           font-size: 10px
-          .color_text

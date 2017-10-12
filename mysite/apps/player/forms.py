@@ -31,6 +31,7 @@ class RegistForm(forms.Form):
     )
 
     player_name = forms.CharField(max_length=64)
+    player_nickname = forms.CharField(max_length=64)
     player_phone_number = forms.CharField(max_length=16)
     player_gender = forms.ChoiceField(choices=Player.GENDER_CHOICES)
     player_adult = forms.ChoiceField(choices=Player.ADULT_CHOICES)
@@ -39,3 +40,12 @@ class RegistForm(forms.Form):
     agree_read_all = forms.BooleanField()
     agree_no_problem = forms.BooleanField()
     agree_face = forms.BooleanField()
+
+
+class CancelForm(forms.Form):
+    scenario_id = forms.IntegerField()
+    character_id = forms.IntegerField()
+    player_name = forms.CharField(max_length=64)
+    player_phone_number = forms.CharField(max_length=16)
+    player_email = forms.EmailField(max_length=64)
+    agree_cancel = forms.BooleanField()

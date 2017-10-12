@@ -15,7 +15,13 @@ from mysite.apps.scenario.models import Scenario
 
 @admin.register(Character)
 class CharacterAdmin(admin.ModelAdmin):
-    list_display = ('name', 'scenario', 'player', 'status')
+    list_display = ('name', 'scenario', 'player', 'status', 'reg_date')
+
+    def reg_date(self, obj):
+        if obj.player:
+            return obj.player.reg_date
+        return None
+    reg_date.short_description = "신청 시간"
 
 
 def delete_selected(modeladmin, request, queryset):
@@ -44,4 +50,4 @@ class PlayerAdmin(admin.ModelAdmin):
 
 @admin.register(Scenario)
 class ScenarioAdmin(admin.ModelAdmin):
-    list_display = ('name', 'adult_only', 'gender_only', 'is_active')
+    list_display = ('name', 'master', 'adult_only', 'gender_only', 'is_active')

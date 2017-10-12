@@ -6,19 +6,12 @@ from .models import Mail
 
 
 def email_sending():
-    mails = Mail.objects.all()
-
-    for mail in mails:
-        data = {'player_name': mail.player_name, }
-                # 'scenario_name': mail.scenario_name,
-                # 'player_reg_date': mail.player_reg_date.astimezone(timezone('Asia/Seoul')).strftime("%Y-%m-%d %H:%M")}
-
+    for mail in Mail.objects.all():
         dj_mail.send_mail(
-            subject='[게임데이] 신청 확인',
-            message=player_regist_template % data,
+            subject='[할로윈 파티] 신청 확인',
+            message=player_regist_template,
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[mail.player_email],
-            html_message=player_regist_template % data
+            html_message=player_regist_template
         )
-
         mail.delete()

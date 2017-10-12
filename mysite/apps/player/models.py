@@ -30,6 +30,11 @@ class Player(models.Model):
         max_length=64
     )
 
+    nickname = models.CharField(
+        _("Player Nickname"),
+        max_length=64
+    )
+
     phone_number = models.CharField(
         _("Phone Number"),
         max_length=16
