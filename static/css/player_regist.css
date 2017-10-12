@@ -260,13 +260,13 @@ body {
           width: 320px;
           line-height: 38px; }
           .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_title .scenario_name {
-            width: 240px;
+            width: 235px;
             position: relative;
             display: inline-block; }
           .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_title .scenario_master {
-            width: 75px;
+            width: 84px;
             font-weight: bold;
-            font-size: 12px; }
+            font-size: 11px; }
           .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_title a {
             text-decoration: none;
             color: #000000; }
