@@ -7,3 +7,4 @@ class Mail(models.Model):
     character_name = models.CharField(max_length=128)
     player_reg_date = models.DateTimeField()
     player_email = models.EmailField(max_length=64)
+    player_phone_number = models.CharField(max_length=32, null=True)

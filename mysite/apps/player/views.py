@@ -120,7 +120,8 @@ class PlayerRegist(TemplateView):
                     scenario_name=scenario.name,
                     character_name=character.name,
                     player_reg_date=player.reg_date,
-                    player_email=player.email
+                    player_email=player.email,
+                    player_phone_number=player.phone_number
                 )
                 mail.save()
 

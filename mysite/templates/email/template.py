@@ -1,7 +1,13 @@
 player_regist_template = """안녕하세요. NAVER TRPG CAFE입니다.<br>
 <br>
 먼저, 성공적인 할로윈 파티 참가신청을 축하드립니다!<br>
-아래는 할로윈 파티 관련, 몇 가지 안내사항 입니다.<br>
+아래는 신청 정보 및 할로윈 파티 관련, 몇 가지 안내사항 입니다.<br>
+<br>
+0. 신청 정보 (신청 취소시 필요)<br>
+* 신청 시나리오: %(scenario_name)s<br>
+* 신청 캐릭터: %(character_name)s<br>
+* 신청 플레이어 이름: %(player_name)s<br>
+* 신청 연락처: %(player_phone_number)s<br>
 <br>
 1. 참가비 입금 관련<br>
 ※ 신청을 완료하시면 ‘가신청’ 처리가 되며,<br>
