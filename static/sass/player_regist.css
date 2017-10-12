@@ -258,7 +258,8 @@ body {
           position: absolute;
           font-size: 20px;
           width: 320px;
-          line-height: 38px; }
+          line-height: 38px;
+          cursor: pointer; }
           .container.body .footer_container .footer_scenario_container .footer_scenario .footer_scenario_title .scenario_name {
             width: 235px;
             position: relative;
