@@ -105,7 +105,7 @@
             {% for scenario in scenarios %}
                 <div class="footer_scenario">
                     <div class="footer_scenario_title">
-                        <a class="scenario_name" href="/cancel/{{ scenario.id }}">{{ scenario.name|truncatechars:25 }}</a>
+                        <a class="scenario_name" href="/cancel/{{ scenario.id }}">{{ scenario.name|truncatechars:23 }}</a>
                         {% if scenario.master != None %}
                             <span class="scenario_master">{{ scenario.master }} </span>
                         {% endif %}
